@@ -4,7 +4,7 @@ path_ans = input('The file path of your ANSWERS: ')
 path_result_1 = input('The file path of your PREDTCTION RESULTS (please enter the string before any numbers): ')
 path_result_here = input('The directory where you want to save your ANALYSIS RESULTS FROM HERE: ')
 
-## accuracy part
+## accuracy visualization part
 import cv2, numpy
 def intersect_xor():
     for _num in range(1, 3):
@@ -44,7 +44,7 @@ def add_up():
             img_addup_br = cv2.bitwise_or(img_red, img_blue, mask = None)
             img_addup = cv2.bitwise_or(img_green, img_addup_br, mask = None)
             cv2.imwrite(path_result_here + str(_num) + '_' + str(img_num) + '_addup.png', img_addup)
-def accuracy():
+def visualization():
     intersect_xor()
     colorize()
     add_up()
@@ -105,7 +105,7 @@ def statistic_four_all():
             statistics(_num, img_num)
 ## packed here
 def main():
-    accuracy()
+    visualization()
     statistic_four_all()
 
 if __name__ == '__main__':
